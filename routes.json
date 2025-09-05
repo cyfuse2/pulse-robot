@@ -1,0 +1,11 @@
+{
+  "/api/*": "/$1",
+  "/api/robots": "/robots",
+  "/api/robots/:id": "/robots/:id",
+  "/api/testimonials": "/testimonials",
+  "/api/testimonials/:id": "/testimonials/:id",
+  "/api/contacts": "/contacts",
+  "/api/contacts/:id": "/contacts/:id",
+  "/api/waitlist": "/waitlist",
+  "/api/waitlist/:id": "/waitlist/:id"
+}

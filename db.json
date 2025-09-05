@@ -1,0 +1,85 @@
+{
+  "robots": [
+    {
+      "id": 1,
+      "model": "Atlas",
+      "version": "1.0",
+      "height": "5'9\"",
+      "weight": "160lbs",
+      "capacity": "55lbs",
+      "uptime": "6hr",
+      "movement": "1.5M/S",
+      "features": [
+        "Advanced Sensors",
+        "Adaptive Learning",
+        "Fluid Movement"
+      ],
+      "description": "Precision Engineering Meets Adaptive AI",
+      "image": "/robot-showcase.png",
+      "available": true
+    },
+    {
+      "id": 2,
+      "model": "Nexus",
+      "version": "2.1",
+      "height": "6'0\"",
+      "weight": "175lbs",
+      "capacity": "70lbs",
+      "uptime": "8hr",
+      "movement": "1.8M/S",
+      "features": [
+        "Enhanced Vision",
+        "Natural Language Processing",
+        "Advanced Mobility"
+      ],
+      "description": "Next Generation Companion",
+      "image": "/robot-nexus.png",
+      "available": false
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "content": "O Atlas transformou nossa linha de produção, lidando com tarefas repetitivas enquanto nossa equipe se concentra na inovação. Aumento de 30% na produção em três meses.",
+      "author": "Sarah Chen",
+      "role": "VP de Operações, Axion Manufacturing",
+      "company": "Axion Manufacturing"
+    },
+    {
+      "id": 2,
+      "content": "A implementação do Atlas em nossos centros de distribuição reduziu os acidentes de trabalho em 40%, melhorando a precisão dos pedidos. As capacidades de aprendizado são notáveis.",
+      "author": "Michael Rodriguez",
+      "role": "Diretor de Logística, GlobalShip",
+      "company": "GlobalShip"
+    },
+    {
+      "id": 3,
+      "content": "O Atlas se adaptou aos nossos protocolos de laboratório mais rápido do que qualquer sistema que já usamos. É como ter outro pesquisador que nunca se cansa e mantém precisão perfeita.",
+      "author": "Dra. Amara Patel",
+      "role": "Cientista Líder, BioAdvance Research",
+      "company": "BioAdvance Research"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "fullName": "João Silva",
+      "email": "joao.silva@exemplo.com",
+      "company": "Tech Brasil",
+      "message": "Gostaria de agendar uma demonstração do Atlas.",
+      "date": "2023-10-15"
+    }
+  ],
+  "waitlist": [
+    {
+      "id": 1,
+      "email": "maria@empresa.com.br",
+      "date": "2023-09-20"
+    },
+    {
+      "id": 2,
+      "email": "carlos@tech.com.br",
+      "date": "2023-09-22"
+    }
+  ]
+}
