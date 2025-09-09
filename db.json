@@ -1,7 +1,7 @@
 {
   "robots": [
     {
-      "id": 1,
+      "id": "1",
       "model": "Atlas",
       "version": "1.0",
       "height": "5'9\"",
@@ -19,7 +19,7 @@
       "available": true
     },
     {
-      "id": 2,
+      "id": "2",
       "model": "Nexus",
       "version": "2.1",
       "height": "6'0\"",
@@ -34,26 +34,44 @@
       ],
       "description": "Next Generation Companion",
       "image": "/robot-nexus.png",
-      "available": false
+      "available": true
+    },
+    {
+      "id": "48c0",
+      "model": "Orion",
+      "version": "1.5",
+      "height": "5'11\"",
+      "weight": "170lbs",
+      "capacity": "65lbs",
+      "uptime": "7hr",
+      "movement": "1.7M/S",
+      "features": [
+        "Terrain Adaptation",
+        "Voice Recognition",
+        "Object Manipulation"
+      ],
+      "description": "Versatile Assistant for Complex Environments",
+      "image": "/robot-orion.png",
+      "available": true
     }
   ],
   "testimonials": [
     {
-      "id": 1,
+      "id": "1",
       "content": "O Atlas transformou nossa linha de produção, lidando com tarefas repetitivas enquanto nossa equipe se concentra na inovação. Aumento de 30% na produção em três meses.",
       "author": "Sarah Chen",
       "role": "VP de Operações, Axion Manufacturing",
       "company": "Axion Manufacturing"
     },
     {
-      "id": 2,
+      "id": "2",
       "content": "A implementação do Atlas em nossos centros de distribuição reduziu os acidentes de trabalho em 40%, melhorando a precisão dos pedidos. As capacidades de aprendizado são notáveis.",
       "author": "Michael Rodriguez",
       "role": "Diretor de Logística, GlobalShip",
       "company": "GlobalShip"
     },
     {
-      "id": 3,
+      "id": "3",
       "content": "O Atlas se adaptou aos nossos protocolos de laboratório mais rápido do que qualquer sistema que já usamos. É como ter outro pesquisador que nunca se cansa e mantém precisão perfeita.",
       "author": "Dra. Amara Patel",
       "role": "Cientista Líder, BioAdvance Research",
@@ -62,24 +80,74 @@
   ],
   "contacts": [
     {
-      "id": 1,
-      "fullName": "João Silva",
+      "id": "1",
+      "name": "João Silva",
       "email": "joao.silva@exemplo.com",
       "company": "Tech Brasil",
-      "message": "Gostaria de agendar uma demonstração do Atlas.",
-      "date": "2023-10-15"
+      "message": "Gostaria de agendar uma demonstração do Atlas para nossa empresa.",
+      "createdAt": "2023-10-15T14:30:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Maria Oliveira",
+      "email": "maria.oliveira@techsolutions.com.br",
+      "company": "Tech Solutions",
+      "message": "Preciso de informações sobre preços e disponibilidade do modelo Nexus.",
+      "createdAt": "2023-11-05T09:15:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Pedro Santos",
+      "email": "pedro.santos@industrialfuture.com",
+      "company": "Industrial Future",
+      "message": "Estamos interessados em implementar robôs em nossa linha de produção. Podemos agendar uma reunião?",
+      "createdAt": "2023-12-10T16:45:00Z"
     }
   ],
   "waitlist": [
     {
-      "id": 1,
+      "id": "1",
+      "name": "Maria Souza",
       "email": "maria@empresa.com.br",
-      "date": "2023-09-20"
+      "phone": "(11) 98765-4321",
+      "createdAt": "2023-09-20T10:30:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
+      "name": "Carlos Mendes",
       "email": "carlos@tech.com.br",
-      "date": "2023-09-22"
+      "phone": "(21) 99876-5432",
+      "createdAt": "2023-09-22T14:45:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Ana Ferreira",
+      "email": "ana.ferreira@inovacao.com",
+      "phone": "(31) 97654-3210",
+      "createdAt": "2023-10-05T09:15:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Roberto Almeida",
+      "email": "roberto@futuretech.com.br",
+      "phone": null,
+      "createdAt": "2023-10-18T16:20:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Juliana Costa",
+      "email": "juliana.costa@nextstep.com",
+      "phone": "(41) 98888-7777",
+      "createdAt": "2023-11-02T11:10:00Z"
+    },
+    {
+      "id": "dd03",
+      "name": "Carlos Silva",
+      "email": "carlos@gmail.com",
+      "company": "Fecaf",
+      "phone": "",
+      "isDemo": true,
+      "createdAt": "2025-09-09T10:50:57.191Z"
     }
   ]
 }

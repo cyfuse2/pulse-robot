@@ -17,7 +17,7 @@ const DetailsSection = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Simple validation
@@ -26,15 +26,39 @@ const DetailsSection = () => {
       return;
     }
 
-    // Demo form submission
-    toast.success("Solicitação enviada com sucesso!");
+    try {
+      // Enviar para a API como uma entrada na lista de espera
+      const response = await fetch("http://localhost:3000/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          company: formData.company,
+          phone: "", // Campo opcional
+          isDemo: true, // Indicador de que é uma solicitação de demonstração
+          createdAt: new Date().toISOString()
+        })
+      });
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      company: ""
-    });
+      if (!response.ok) {
+        throw new Error("Falha ao enviar solicitação");
+      }
+
+      toast.success("Solicitação de demonstração enviada com sucesso!");
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        company: ""
+      });
+    } catch (error) {
+      console.error("Erro ao enviar solicitação:", error);
+      toast.error("Não foi possível enviar sua solicitação. Tente novamente mais tarde.");
+    }
   };
   return <section id="details" className="w-full bg-white py-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">

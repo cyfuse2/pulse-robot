@@ -1,5 +1,7 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return <footer className="w-full bg-white py-0">
       <div className="section-container">
@@ -13,6 +15,9 @@ const Footer = () => {
             Rezaul Arif
           </a>
         </p>
+        <div className="mt-2 text-center">
+          <Link to="/admin" className="text-xs text-gray-400 hover:text-pulse-500 hover:underline">Área Administrativa</Link>
+        </div>
       </div>
     </footer>;
 };
