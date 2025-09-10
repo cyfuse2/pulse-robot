@@ -35,6 +35,7 @@ const RobotsManagement = () => {
     image: "/robot-showcase.png",
     available: true
   });
+  const [updatingRobotId, setUpdatingRobotId] = useState<number | null>(null);
 
   // Carregar robôs da API
   useEffect(() => {
@@ -104,6 +105,32 @@ const RobotsManagement = () => {
     }
   };
 
+  const handleToggleAvailability = async (robot: Robot) => {
+    if (updatingRobotId !== null) return;
+    setUpdatingRobotId(robot.id);
+    
+    try {
+      const updatedRobot = { ...robot, available: !robot.available };
+      
+      const response = await fetch(`http://localhost:3000/robots/${robot.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedRobot)
+      });
+      
+      if (!response.ok) throw new Error("Falha ao atualizar disponibilidade");
+      
+      const result = await response.json();
+      setRobots(robots.map(r => r.id === robot.id ? result : r));
+      toast.success(`Robô ${result.available ? "disponibilizado" : "indisponibilizado"} com sucesso!`);
+    } catch (error) {
+      console.error("Erro ao atualizar disponibilidade:", error);
+      toast.error("Não foi possível atualizar a disponibilidade do robô");
+    } finally {
+      setUpdatingRobotId(null);
+    }
+  };
+
   const handleAddRobot = async () => {
     try {
       const response = await fetch("http://localhost:3000/robots", {
@@ -150,7 +177,7 @@ const RobotsManagement = () => {
     } else if (name === "available") {
       setEditingRobot({
         ...editingRobot,
-        available: type === "checkbox" ? (e.target as HTMLInputElement).checked : Boolean(value)
+        available: value === "true"
       });
     } else {
       setEditingRobot({
@@ -421,9 +448,14 @@ const RobotsManagement = () => {
                         <option value="false">Não</option>
                       </select>
                     ) : (
-                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${robot.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                      <button 
+                        onClick={() => handleToggleAvailability(robot)}
+                        disabled={updatingRobotId !== null}
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${robot.available ? 'bg-green-100 text-green-800 hover:bg-green-200' : 'bg-red-100 text-red-800 hover:bg-red-200'} cursor-pointer transition-colors`}
+                      >
                         {robot.available ? "Sim" : "Não"}
-                      </span>
+                        {updatingRobotId === robot.id && <Loader2 className="ml-1 h-3 w-3 animate-spin" />}
+                      </button>
                     )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
